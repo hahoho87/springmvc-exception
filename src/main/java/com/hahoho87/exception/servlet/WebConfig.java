@@ -3,6 +3,7 @@ package com.hahoho87.exception.servlet;
 import com.hahoho87.exception.filter.LogFilter;
 import com.hahoho87.exception.interceptor.LogInterceptor;
 import com.hahoho87.exception.resolver.MyHandlerExceptionResolver;
+import com.hahoho87.exception.resolver.UserHandlerExceptionResolver;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerExceptionResolver;
@@ -27,6 +28,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void extendHandlerExceptionResolvers(List<HandlerExceptionResolver> resolvers) {
         resolvers.add(new MyHandlerExceptionResolver());
+        resolvers.add(new UserHandlerExceptionResolver());
     }
 
     //    @Bean
